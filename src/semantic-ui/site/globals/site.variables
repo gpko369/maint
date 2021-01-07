@@ -1,0 +1,8 @@
+/*******************************
+     User Global Variables
+*******************************/
+
+@fontName: 'Nanum Barun Gothic';
+
+/* Colors */
+@red: #eb4c2a;

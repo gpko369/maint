@@ -1,0 +1,27 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /home/centos/build/
+hooks:
+  ApplicationStop:
+    - location: scripts/stop_application.sh
+      timeout: 6000
+      runas: centos
+  AfterInstall:
+    - location: scripts/yarn_build.sh
+      timeout: 6000
+      runas: centos
+    - location: scripts/python_dependency.sh
+      timeout: 6000
+      runas: centos
+    - location: scripts/migrate.sh
+      timeout: 6000
+      runas: centos
+    - location: scripts/python_static.sh
+      timeout: 6000
+      runas: centos
+  ApplicationStart:
+    - location: scripts/start_application.sh
+      timeout: 6000
+      runas: centos

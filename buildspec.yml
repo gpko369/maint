@@ -1,0 +1,11 @@
+version: 0.2
+
+phases:
+  build:
+    commands:
+      - echo Build Starting on `date`
+      - yarn
+  post_build:
+    commands:
+      - echo build success
+      - pwd
